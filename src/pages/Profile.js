@@ -1,22 +1,22 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
-import { useState } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
+import { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
 
 export default function Profile() {
   const [username, setUsername] = useState();
   const [email, setEmail] = useState();
   const [noTelp, setNoTelepon] = useState();
-  const [jenisKelamin, setJenisKelamin] = useState('');
+  const [jenisKelamin, setJenisKelamin] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
     // Lakukan proses simpan data ke database atau kirim ke API
-    console.log('Profil anda berhasil diubah!');
+    console.log("Profil anda berhasil diubah!");
   };
 
-  const jenisKelamin2 = ['Perempuan', 'Laki-laki', 'Lainnya'];
+  const jenisKelamin2 = ["Perempuan", "Laki-laki", "Lainnya"];
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">

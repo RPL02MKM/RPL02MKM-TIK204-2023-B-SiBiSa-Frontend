@@ -1,10 +1,10 @@
-import Head from 'next/head';
-import { useState } from 'react';
-import Link from 'next/link';
+import Head from "next/head";
+import { useState } from "react";
+import Link from "next/link";
 
 export default function Login() {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleUsernameChange = (event) => {
     setUsername(event.target.value);

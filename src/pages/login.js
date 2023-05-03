@@ -1,10 +1,10 @@
-import Head from "next/head";
-import { useState } from "react";
-import Link from "next/link";
+import Head from 'next/head';
+import { useState } from 'react';
+import Link from 'next/link';
 
 export default function Login() {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
 
   const handleUsernameChange = (event) => {
     setUsername(event.target.value);
@@ -77,8 +77,8 @@ export default function Login() {
           </div>
         </form>
         <div className="flex item-center justify-evenly mx-20 mt-4">
-          <span className="text-gray-600 ml-4">Dont have an account yet?</span>
-          <Link href="/signup" className="mr-4">
+          <span className="text-gray-600">Dont have an account yet?</span>
+          <Link href="/signup">
             <p className="text-gray-700 hover:text-green-600 font-medium ml-2">
               Sign up
             </p>

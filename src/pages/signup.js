@@ -1,36 +1,29 @@
-import { useState } from 'react';
-import Head from 'next/head';
+import React from "react";
+import Head from "next/head";
+import signupAuth from "@/firebase/auth/signup-auth";
+import { useRouter } from "next/navigation";
 
 export default function Signup() {
-  const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
-  const [phoneNumber, setPhoneNumber] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
+  const [username, setUsername] = React.useState("");
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
+  const [passworrdConfirm, setPassworrdConfirm] = React.useState("");
+  const router = useRouter();
 
-  const handleUsernameChange = (event) => {
-    setUsername(event.target.value);
-  };
-
-  const handleEmailChange = (event) => {
-    setEmail(event.target.value);
-  };
-
-  const handlePhoneNumberChange = (event) => {
-    setPhoneNumber(event.target.value);
-  };
-
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
-  };
-
-  const handleConfirmPasswordChange = (event) => {
-    setConfirmPassword(event.target.value);
-  };
-
-  const handleSubmit = (event) => {
+  const handleForm = async (event) => {
     event.preventDefault();
-    // Lakukan validasi pendaftaran akun
+
+    const { result, error } = await signupAuth(
+      email,
+      password,
+      passworrdConfirm
+    );
+
+    if (error) {
+      return alert(error);
+    }
+    console.log(result);
+    return router.push("/");
   };
 
   return (
@@ -40,7 +33,7 @@ export default function Signup() {
       </Head>
       <div className="w-full max-w-md">
         <form
-          onSubmit={handleSubmit}
+          onSubmit={handleForm}
           className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
         >
           <h1 className="text-3xl font-bold text-gray-900 mb-8">Sign Up</h1>
@@ -52,10 +45,11 @@ export default function Signup() {
               Username
             </label>
             <input
+              onChange={(e) => setUsername(e.target.value)}
+              required
+              type="username"
+              name="username"
               id="username"
-              type="text"
-              value={username}
-              onChange={handleUsernameChange}
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               placeholder="Enter your username"
             />
@@ -68,28 +62,13 @@ export default function Signup() {
               Email
             </label>
             <input
-              id="email"
+              onChange={(e) => setEmail(e.target.value)}
+              required
               type="email"
-              value={email}
-              onChange={handleEmailChange}
+              name="email"
+              id="email"
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               placeholder="Enter your email"
-            />
-          </div>
-          <div className="mb-4">
-            <label
-              htmlFor="phone-number"
-              className="block text-gray-700 font-bold mb-2"
-            >
-              Phone Number
-            </label>
-            <input
-              id="phone-number"
-              type="tel"
-              value={phoneNumber}
-              onChange={handlePhoneNumberChange}
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              placeholder="Enter your phone number"
             />
           </div>
           <div className="mb-4">
@@ -100,10 +79,11 @@ export default function Signup() {
               Password
             </label>
             <input
-              id="password"
+              onChange={(e) => setPassword(e.target.value)}
+              required
               type="password"
-              value={password}
-              onChange={handlePasswordChange}
+              name="password"
+              id="password"
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               placeholder="Enter your password"
             />
@@ -116,10 +96,11 @@ export default function Signup() {
               Confirm Password
             </label>
             <input
-              id="confirm-password"
+              onChange={(e) => setPassworrdConfirm(e.target.value)}
+              required
               type="password"
-              value={confirmPassword}
-              onChange={handleConfirmPasswordChange}
+              name="password-confirm"
+              id="password-confirm"
               className="shadow appearance-none border rounded w-full py-2 px-3
             text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               placeholder="Confirm your password"

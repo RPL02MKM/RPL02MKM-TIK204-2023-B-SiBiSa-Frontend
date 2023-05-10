@@ -15,6 +15,12 @@
 # idea
 /.idea/
 
+# environment
+.env
+.env.production
+.env.staging
+.env.uat
+
 # production
 /build
 

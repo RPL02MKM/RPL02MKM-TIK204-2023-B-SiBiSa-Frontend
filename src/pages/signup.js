@@ -14,6 +14,7 @@ export default function Signup() {
     event.preventDefault();
 
     const { result, error } = await signupAuth(
+      username,
       email,
       password,
       passworrdConfirm

@@ -1,22 +1,25 @@
-import Head from 'next/head';
-import { useState } from 'react';
-import Link from 'next/link';
+import Head from "next/head";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import signInAuth from "@/firebase/auth/signin-auth";
+import Link from "next/link";
 
-export default function Login() {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+export default function Signin() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const router = useRouter();
 
-  const handleUsernameChange = (event) => {
-    setUsername(event.target.value);
-  };
-
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
-  };
-
-  const handleSubmit = (event) => {
+  const handleForm = async (event) => {
     event.preventDefault();
-    // Lakukan validasi login
+
+    const { result, error } = await signInAuth(email, password);
+
+    if (error) {
+      return console.log(error);
+    }
+
+    console.log(result);
+    return router.push("/");
   };
 
   return (
@@ -26,7 +29,7 @@ export default function Login() {
       </Head>
       <div className="w-full max-w-md">
         <form
-          onSubmit={handleSubmit}
+          onSubmit={handleForm}
           className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
         >
           <h1 className="text-3xl font-bold text-gray-900 mb-8">Login</h1>
@@ -35,13 +38,14 @@ export default function Login() {
               htmlFor="username"
               className="block text-gray-700 font-bold mb-2"
             >
-              Username or Email
+              Email
             </label>
             <input
-              id="username"
-              type="text"
-              value={username}
-              onChange={handleUsernameChange}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              type="email"
+              name="email"
+              id="email"
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               placeholder="Enter your username or email"
             />
@@ -54,10 +58,11 @@ export default function Login() {
               Password
             </label>
             <input
-              id="password"
+              onChange={(e) => setPassword(e.target.value)}
+              required
               type="password"
-              value={password}
-              onChange={handlePasswordChange}
+              name="password"
+              id="password"
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               placeholder="Enter your password"
             />

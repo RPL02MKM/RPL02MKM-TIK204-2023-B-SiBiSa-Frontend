@@ -1,5 +1,6 @@
 import React from "react";
 import Head from "next/head";
+import Link from "next/link";
 import signupAuth from "@/firebase/auth/signup-auth";
 import { useRouter } from "next/navigation";
 
@@ -14,10 +15,10 @@ export default function Signup() {
     event.preventDefault();
 
     const { result, error } = await signupAuth(
-      username,
       email,
       password,
-      passworrdConfirm
+      passworrdConfirm,
+      username
     );
 
     if (error) {
@@ -108,6 +109,9 @@ export default function Signup() {
             />
           </div>
           <div className="flex items-center justify-center">
+            <Link href="/" className="text-blue-800 underline pr-20">
+              <h1>Back</h1>
+            </Link>
             <button
               type="submit"
               className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"

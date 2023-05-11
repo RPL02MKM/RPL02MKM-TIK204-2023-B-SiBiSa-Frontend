@@ -18,6 +18,7 @@ export default function homepage () {
               <div className="container mx-0 flex min-w-full flex-col items-center">
                 <img className='inline object-cover w-36 h-36 rounded-lg shadow-lg antialiased' src='https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png'></img>
               </div>
+              <h1 className='text-center'></h1>
 
               
             </div>

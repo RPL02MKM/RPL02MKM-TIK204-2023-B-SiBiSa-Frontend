@@ -13,13 +13,15 @@ export default function homepage () {
             Manfaatkan sampahmu dengan bijak!
           </h2>
         <div className="grid grid-rows-3 grid-flow-col gap-4">
-            <div className="row-span-4 p-8 rounded-xl shadow-md space-y-4">
-              <h1 className='text-center font-semibold'>Hai , User</h1>
-              <div className="container mx-0 flex min-w-full flex-col items-center">
+            <div className="row-span-4 p-8 rounded-xl shadow-md space-y-4 space-x-4">
+              <h1 className='text-center font-semibold'>Hai, User</h1>
+              <div className="container mx-0 flex min-w-full flex-col items-center space-y-4">
                 <img className='inline object-cover w-36 h-36 rounded-lg shadow-lg antialiased' src='https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png'></img>
-              </div>
-              <h1 className='text-center'></h1>
+                <h1 className='text-center'>Total Daur Ulang kamu</h1>
+              <span class="col-span-2 px-2 py-1 text-xs font-bold leading-none text-indigo-100 bg-indigo-700 rounded"> 0 Kg
+              </span>
 
+              </div>
               
             </div>
             <div className="col-span-2 p-8 rounded-xl shadow-md space-y-4 ">

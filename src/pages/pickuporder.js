@@ -1,6 +1,6 @@
 import Layout from '@/components/layouts/Layouts'
 
-export default function pickerorder () {
+export default function pickuporder () {
   return (
     <Layout>
       <main className="bg-white  ">

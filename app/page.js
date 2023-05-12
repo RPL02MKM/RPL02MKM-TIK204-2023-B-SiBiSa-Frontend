@@ -1,3 +1,5 @@
+"use client";
+
 export default function Home() {
   return (
     <main className="bg-white">
@@ -25,7 +27,6 @@ export default function Home() {
         <section className="py-16">
           <div className="container mx-auto">
             <h2 className="text-2xl font-medium mb-8">Berita Terbaru</h2>
-            {/* list produk terbaru */}
           </div>
         </section>
       </div>

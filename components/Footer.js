@@ -17,16 +17,6 @@ export default function Footer() {
                 Tentang Kami
               </p>
             </Link>
-            <Link href="/privacy-policy">
-              <p className="text-gray-500 hover:text-green-500 mx-4">
-                Kebijakan Privasi
-              </p>
-            </Link>
-            <Link href="/terms-and-conditions">
-              <p className="text-gray-500 hover:text-green-500 mx-4">
-                Syarat dan Ketentuan
-              </p>
-            </Link>
           </div>
         </nav>
       </div>

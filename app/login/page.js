@@ -23,9 +23,9 @@ export default function Login() {
       try {
         await login(email, password);
         localStorage.setItem("user", JSON.stringify(currentUser));
-        router.push("/admin");
+        router.push("/user");
       } catch (err) {
-        if (err.code === "auth/wrong-password") {
+        if (err.code == "auth/wrong-password") {
           setError("Incorrect email or password");
         } else {
           setError(
@@ -39,7 +39,7 @@ export default function Login() {
       await signup(email, password);
       return setIsLoggingIn(!isLoggingIn);
     } catch (err) {
-      if (err.code === "auth/email-already-in-use") {
+      if (err.code == "auth/email-already-in-use") {
         setError("The email address you entered is already in use.");
       } else {
         setError("An error occurred while signing up. Please try again later.");

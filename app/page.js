@@ -1,10 +1,15 @@
 "use client";
 
+import Link from "next/link";
+import { useAuth } from "@/context/AuthContext";
+
 export default function Home() {
+  const { currentUser } = useAuth();
+
   return (
     <main className="bg-white">
       <div className="min-h-screen bg-white max-w-7xl mx-auto px-8 py-20">
-        <section className="bg-white text-black py-16">
+        <section className="bg-white py-16">
           <div className="container mx-auto">
             <h1 className="text-4xl font-bold mb-4">
               Jual Beli Sampah Anorganik Online dengan <br />
@@ -22,11 +27,18 @@ export default function Home() {
               pengelolaan sampah anorganik yang efektif.
             </p>
           </div>
+          <div className="max-w-7xl mx-auto px-8 py-10">
+            <Link href={currentUser ? "/user" : "/login"}>
+              <button className="px-8 py-3 text-2xl rounded-2xl text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:bg-green-700 transition duration-150 ease-in-out">
+                {currentUser ? "Dashboard" : "Get Stated"}
+              </button>
+            </Link>
+          </div>
         </section>
 
         <section className="py-16">
           <div className="container mx-auto">
-            <h2 className="text-2xl font-medium mb-8">Berita Terbaru</h2>
+            <h2 className="text-2xl font-medium mb-8">Postingan Terbaru</h2>
           </div>
         </section>
       </div>

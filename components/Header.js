@@ -4,10 +4,12 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { useAuth } from "@/context/AuthContext";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const { currentUser } = useAuth();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -56,9 +58,14 @@ export default function Navbar() {
                   FAQ
                 </p>
               </Link>
-              <Link href="/login">
+              {/* <Link href="/login">
                 <button className="ml-6 px-4 py-2 rounded-2xl text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:bg-green-700 transition duration-150 ease-in-out">
                   Login
+                </button>
+              </Link> */}
+              <Link href={currentUser ? "/profile" : "/login"}>
+                <button className="ml-6 px-4 py-2 rounded-2xl text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:bg-green-700 transition duration-150 ease-in-out">
+                  {currentUser ? "Profile" : "Login"}
                 </button>
               </Link>
             </div>
@@ -116,9 +123,9 @@ export default function Navbar() {
               FAQ
             </p>
           </Link>
-          <Link href="/login">
-            <button className="ml-4 px-4 py-2 mt-4 rounded-lg text-white bg-green-600 hover:bg-green-900 focus:outline-none focus:bg-green-700 transition duration-150 ease-in-out">
-              Login
+          <Link href={currentUser ? "/profile" : "/login"}>
+            <button className="ml-6 px-4 py-2 rounded-2xl text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:bg-green-700 transition duration-150 ease-in-out">
+              {currentUser ? "Profile" : "Login"}
             </button>
           </Link>
         </div>

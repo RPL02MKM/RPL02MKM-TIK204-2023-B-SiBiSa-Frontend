@@ -21,9 +21,18 @@ export function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true);
   const userInfo = useRef();
 
-  function signup(email, password) {
+  function signup(email, password, username) {
     createUserWithEmailAndPassword(auth, email, password);
+    const user = auth.currentUser;
+    updateDisplayName(user, username);
+    setCurrentUser(user);
     return;
+  }
+
+  function updateDisplayName(user, username) {
+    updateProfile(user, {
+      displayName: username,
+    });
   }
 
   function login(email, password) {

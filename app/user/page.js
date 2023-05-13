@@ -1,12 +1,12 @@
 "use client";
 
-import UserDashboard from "../userDashboard/page";
-import { useEffect } from "react";
-import { useRouter } from "next/navigation";
+import UserDashboard from "./UserDashboard";
 import { useAuth } from "@/context/AuthContext";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export default function Admin() {
-  const { logout, currentUser } = useAuth();
+  const { currentUser } = useAuth();
   const router = useRouter();
 
   useEffect(() => {
@@ -17,15 +17,7 @@ export default function Admin() {
 
   return (
     <div className="min-h-screen mx-auto items-center">
-      <h1>Ini Halaman Admin</h1>
       {currentUser && <UserDashboard />}
-      <button
-        onClick={() => {
-          logout();
-        }}
-      >
-        Logout
-      </button>
     </div>
   );
 }

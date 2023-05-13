@@ -1,9 +1,11 @@
 export const metadata = {
-  title: "Profile",
+  title: "Input Sampah",
   description: "Learn more about the team behind SiBiSa",
 };
 
 // This is a Server Component
 export default function Layout({ children }) {
-  return <div className="min-h-screen py-40">{children}</div>;
+  return (
+    <div className="bg-white py-40 max-w-7xl flex mx-auto">{children}</div>
+  );
 }

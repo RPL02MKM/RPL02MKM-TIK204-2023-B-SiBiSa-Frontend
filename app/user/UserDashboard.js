@@ -1,9 +1,28 @@
 /* eslint-disable @next/next/no-img-element */
 import { useAuth } from "@/context/AuthContext";
+import { collection, query, getDocs, onSnapshot } from "firebase/firestore";
+import { useState, useEffect } from "react";
+import { db } from "@/firebase/config";
 import Link from "next/link";
 
 export default function UserDashboard() {
+  const [totalBeratSampah, setTotalBeratSampah] = useState(0);
   const { currentUser } = useAuth();
+
+  useEffect(() => {
+    const unsubscribe = onSnapshot(
+      query(collection(db, `users/${currentUser.uid}/sampah`)),
+      (snapshot) => {
+        let totalBerat = 0;
+        snapshot.forEach((doc) => {
+          totalBerat += doc.data().beratSampah;
+        });
+        setTotalBeratSampah(totalBerat);
+      }
+    );
+
+    return () => unsubscribe();
+  }, [currentUser.uid]);
 
   return (
     <div>
@@ -44,7 +63,7 @@ export default function UserDashboard() {
                 </div>
                 <h1 className="text-center">Total Daur Ulang kamu</h1>
                 <span className="px-2 py-1 text-xs font-bold leading-none text-white bg-green-600 rounded">
-                  0 Kg
+                  {totalBeratSampah} Kg
                 </span>
               </div>
             </div>

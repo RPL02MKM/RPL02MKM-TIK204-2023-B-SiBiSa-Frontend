@@ -48,7 +48,7 @@ export default function Input() {
       addDoc(collection(db, `users/${userId}/sampah`), {
         namaSampah: namaSampah,
         jenisSampah: jenisSampah,
-        beratSampah: beratSampah,
+        beratSampah: Number(beratSampah),
         // fotoSampah: fotoSampah,
       });
       // db.collection("sampah").add(data);

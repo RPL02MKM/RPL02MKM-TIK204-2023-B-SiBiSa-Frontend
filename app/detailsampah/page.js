@@ -1,11 +1,11 @@
 "use client";
 
-import Check from "./Check";
+import Detail_Sampah from "./Detail_Sampah";
 import { useAuth } from "@/context/AuthContext";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
-export default function DetailBarang() {
+export default function CheckDetail() {
   const { currentUser } = useAuth();
   const router = useRouter();
 
@@ -17,7 +17,7 @@ export default function DetailBarang() {
 
   return (
     <div className="min-h-screen mx-auto items-center">
-      {currentUser && <Check />}
+      {currentUser && <Detail_Sampah/>}
     </div>
   );
 }

@@ -1,3 +1,4 @@
+import Link from "next/link";
 
 export default function Check() {
   
@@ -74,11 +75,13 @@ export default function Check() {
           <div className="row-span-2 col-span-2 p-8 rounded-xl shadow-md space-y-8">
             <h1 className="text-center text-lg font-semibold">Daftar Barang</h1>
             <div className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-              <img
+              <Link href="/detailsampah">
+                <img
                       className="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
-                      src="https://unsplash.com/photos/-4bD2p5zbdA"
+                      src="https://images.unsplash.com/photo-1595278069441-2cf29f8005a4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"
                       alt="image_barang"
                     />
+              </Link>
             <div class="flex flex-col justify-between p-4 leading-normal">
             <h5 class="mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Botol Plastik Bekas</h5>
             <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Botol air kemasan plastik, tanpa tutup botol.</p>
@@ -89,11 +92,13 @@ export default function Check() {
             </div>
 
             <div className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-              <img
+              <Link href="/detailsampah">
+                <img
                       className="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
-                      src="https://unsplash.com/photos/-4bD2p5zbdA"
+                      src="https://images.unsplash.com/photo-1595278069441-2cf29f8005a4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"
                       alt="image_barang"
                     />
+              </Link>
             <div class="flex flex-col justify-between p-4 leading-normal">
             <h5 class="mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Botol Plastik Bekas</h5>
             <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Botol air kemasan plastik, tanpa tutup botol.</p>

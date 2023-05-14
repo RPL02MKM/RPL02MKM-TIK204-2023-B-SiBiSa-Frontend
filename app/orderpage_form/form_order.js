@@ -23,16 +23,29 @@ export default function Order_Form() {
                         <div class="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-l sm:leading-7">
                             <div class="flex flex-col">
                                 <label class="leading-loose">Nama Tempat</label>
-                                <input type="text" class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600" placeholder="Event title"/>
+                                <input type="text" class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600" placeholder="Nama Lokasi"/>
                             </div>
                             <div class="flex flex-col">
                                 <label class="leading-loose">Alamat Pengiriman</label>
-                                <input type="text" class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600" placeholder="Optional"/>
+                                <input type="text" class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600" placeholder="Alamat tujuan"/>
                             </div>
                             <div class="flex flex-col">
                                 <label class="leading-loose">Catatan Tambahan</label>
                                 <input type="text" class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600" placeholder="Optional"/>
                              </div>
+
+                             <div class="flex flex-col">
+                                <label class="leading-loose">Koordinat Titik Peta</label>
+                             </div>
+
+                             <div className="flex justify-center bg-white border border-gray-200 rounded-lg">
+                                <iframe src="https://maps.google.com/maps?q=Universitas syiah kuala&t=&z=15&ie=UTF8&iwloc=&output=embed" width="700" height="250" frameBorder="0" style={{ border: 0 }} allowfullscreen="" aria-hidden="false" tabIndex="0"></iframe>
+                            </div>
+                            <div className="flex justify-center">
+                            <button class="text-xs bg-transparent hover:bg-gray-400 text-green-700 font-semibold hover:text-white py-2 px-10 border border-green-500 hover:border-transparent rounded">
+                                Tentukan Koordinat
+                            </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -60,7 +73,7 @@ export default function Order_Form() {
 
             <div class="pt-4 flex items-center space-x-4">
                 
-                    <button class="flex justify-center items-center w-full text-gray-900 px-4 py-3 rounded-md focus:outline-none">
+                    <button class="flex justify-center items-center w-full text-gray-900 px-4 py-3 rounded-md focus:outline-none hover:bg-gray-300">
                     <Link href="/user"> 
                     Batalkan </Link>
                     </button>

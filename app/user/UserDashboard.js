@@ -102,9 +102,11 @@ export default function UserDashboard() {
                 Cek Riwayat Daur Ulang Kamu disini
               </h1>
               <div className="flex justify-center">
+                <Link href="/cekriwayat">
                 <button className="px-8 py-4 rounded-xl font-semibold text-white bg-gray-500  hover:bg-gray-700">
                   Riwayat Daur Ulang
                 </button>
+                </Link>
               </div>
             </div>
           </div>

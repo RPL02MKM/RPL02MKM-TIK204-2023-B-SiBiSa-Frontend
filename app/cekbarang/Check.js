@@ -11,8 +11,8 @@ export default function Check() {
         <h2 className="text-lg text-center">
           Manfaatkan sampahmu dengan bijak!
         </h2>
-        <div className="grid grid-rows-3 grid-flow-col gap-4">
-          <div className="col-span-2 p-8 rounded-xl shadow-md space-y-4 space-x-4">
+        <div className="grid-flow-col gap-4 ">
+          <div className="col-span-2 p-8 rounded-xl shadow-md space-y-8 space-x-4">
             <button
               type="button"
               class="inline-block rounded border-2 border-success px-6 pb-[6px] pt-2 text-xs font-medium uppercase leading-normal text-success transition duration-150 ease-in-out hover:border-success-600 hover:bg-neutral-500 hover:bg-opacity-10 hover:text-success-600 focus:border-success-600 focus:text-success-600 focus:outline-none focus:ring-0 active:border-success-700 active:text-success-700 dark:hover:bg-neutral-100 dark:hover:bg-opacity-10"
@@ -67,7 +67,7 @@ export default function Check() {
                     placeholder="Search Here..."
                 />
             </div>
-</div>
+            </div>
 
             <div class="container mx-0 flex min-w-full flex-col items-center"></div>
           </div>
@@ -107,6 +107,38 @@ export default function Check() {
                 </span>
             </div>
             </div>
+
+            <div className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+                <img
+                      className="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
+                      src="https://i1.wp.com/alleghenymfg.com/wp-content/uploads/2019/11/shutterstock_31584622-e1586715457353.jpg?fit=800%2C512&ssl=1"
+                      alt="image_barang"
+                    />
+            <div class="flex flex-col justify-between p-4 leading-normal">
+            <h5 class="mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Koran Bekas</h5>
+            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Keras koran bekas.</p>
+            <span className="inline-flex px-2 py-1 mr-auto text-xs font-bold leading-none text-white bg-green-600 rounded">
+                Total : 0 Kg
+                </span>
+            </div>
+            </div>
+
+            <div className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+                <img
+                      className="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
+                      src="https://i1.wp.com/alleghenymfg.com/wp-content/uploads/2019/11/shutterstock_31584622-e1586715457353.jpg?fit=800%2C512&ssl=1"
+                      alt="image_barang"
+                    />
+            <div class="flex flex-col justify-between p-4 leading-normal">
+            <h5 class="mb-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Koran Bekas</h5>
+            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Keras koran bekas.</p>
+            <span className="inline-flex px-2 py-1 mr-auto text-xs font-bold leading-none text-white bg-green-600 rounded">
+                Total : 0 Kg
+                </span>
+            </div>
+            </div>
+
+
             <div className="container mx-0 flex min-w-full flex-col items-center"></div>
           </div>
         </div>

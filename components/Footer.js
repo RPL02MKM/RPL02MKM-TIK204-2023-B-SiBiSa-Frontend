@@ -17,6 +17,11 @@ export default function Footer() {
                 Tentang Kami
               </p>
             </Link>
+            <Link href="/terms">
+              <p className="text-gray-500 hover:text-green-500 mx-4">
+                Syarat dan Ketentuan
+              </p>
+            </Link>
           </div>
         </nav>
       </div>

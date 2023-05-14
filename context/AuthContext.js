@@ -2,13 +2,13 @@
 
 import React, { useContext, useState, useEffect, useRef } from "react";
 import { auth, db } from "../firebase/config";
+import { doc, getDoc } from "firebase/firestore";
 import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
   signOut,
   onAuthStateChanged,
 } from "firebase/auth";
-import { doc, getDoc } from "firebase/firestore";
 
 const AuthContext = React.createContext();
 
@@ -43,6 +43,16 @@ export function AuthProvider({ children }) {
     return signOut(auth);
   }
 
+  // function updateUserData(userId, userData) {
+  //   const userDocRef = doc(db, "user", userId);
+  //   try {
+  //     userDocRef.update(userData);
+  //     userInfo.current = { ...userInfo.current, ...userData };
+  //   } catch (error) {
+  //     console.error("Error updating user document:", error);
+  //   }
+  // }
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
       setCurrentUser(user);
@@ -57,6 +67,7 @@ export function AuthProvider({ children }) {
     signup,
     logout,
     userInfo,
+    // updateUserData,
   };
 
   return (

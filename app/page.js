@@ -27,7 +27,7 @@ export default function Home() {
               pengelolaan sampah anorganik yang efektif.
             </p>
           </div>
-          <div className="max-w-7xl mx-auto px-8 py-10">
+          <div className="container mx-auto pt-10">
             <Link href={currentUser ? "/user" : "/login"}>
               <button className="px-8 py-3 text-2xl rounded-2xl text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:bg-green-700 transition duration-150 ease-in-out">
                 {currentUser ? "Dashboard" : "Get Stated"}

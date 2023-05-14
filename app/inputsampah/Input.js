@@ -1,5 +1,10 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 "use client";
 
+import { collection, addDoc } from "firebase/firestore";
+import { db } from "@/firebase/config";
+import { useAuth } from "@/context/AuthContext";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import Link from "next/link";
 
@@ -8,12 +13,8 @@ export default function Input() {
   const [jenisSampah, setJenisSampah] = useState("");
   const [beratSampah, setBeratSampah] = useState(0);
   const [fotoSampah, setFotoSampah] = useState("");
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // Lakukan proses simpan data ke database atau kirim ke API
-    console.log("Data sampah berhasil disimpan!");
-  };
+  const { currentUser } = useAuth();
+  const router = useRouter();
 
   const jenisSampahAnorganik = [
     "Plastik",
@@ -37,6 +38,26 @@ export default function Input() {
     "Tutup kaleng",
     "Tutup botol plastik",
   ];
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    try {
+      const userId = currentUser.uid;
+
+      addDoc(collection(db, `users/${userId}/sampah`), {
+        namaSampah: namaSampah,
+        jenisSampah: jenisSampah,
+        beratSampah: beratSampah,
+        // fotoSampah: fotoSampah,
+      });
+      // db.collection("sampah").add(data);
+      console.log("Data berhasil ditambahkan");
+      router.push("/user");
+    } catch (error) {
+      alert("Error saat menambahkan data", error);
+    }
+  };
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-white">

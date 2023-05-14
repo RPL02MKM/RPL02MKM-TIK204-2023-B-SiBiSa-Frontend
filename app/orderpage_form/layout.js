@@ -1,5 +1,5 @@
 export const metadata = {
-    title: "Detail Riwayat",
+    title: "Order Sampah",
     description: "Learn more about the team behind SiBiSa",
   };
   

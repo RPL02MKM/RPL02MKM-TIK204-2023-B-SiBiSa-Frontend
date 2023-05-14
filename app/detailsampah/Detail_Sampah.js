@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Detail_Sampah() {
 
     return (
@@ -21,9 +23,11 @@ export default function Detail_Sampah() {
                             </div>
                         </div>
                         <div className="flex justify-center py-8">
+                            <Link href="/orderpage_form">
                             <button className="px-4 py-2 rounded-xl font-semibold text-white bg-green-700 hover:bg-green-900">
                                 Beli Sampah
                             </button>
+                            </Link>
                         </div>
                     </div>
                 </div>

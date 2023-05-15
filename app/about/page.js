@@ -21,7 +21,7 @@ export default function Page() {
           <div className="rounded-lg overflow-hidden shadow-lg">
             <div className="relative h-60">
               <Image
-                src="/member1.jpg"
+                src="https://drive.google.com/uc?id=1jQHJURf2OAWJaIQT6ULfjPlU_Sj6Zx9J"
                 alt="Team Member 1"
                 layout="fill"
                 objectFit="cover"

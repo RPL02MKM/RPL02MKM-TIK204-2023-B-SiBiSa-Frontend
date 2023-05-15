@@ -1,5 +1,7 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 "use client";
+
+import jenisSampahAnorganik from "./jenisSampah";
 import SuccessModal from "./successModal";
 import { collection, addDoc } from "firebase/firestore";
 import { storage } from "@/firebase/config";
@@ -19,29 +21,6 @@ export default function Input() {
   const [error, setError] = useState(null);
   const { currentUser } = useAuth();
   const router = useRouter();
-
-  const jenisSampahAnorganik = [
-    "Plastik",
-    "Kertas",
-    "Kaleng",
-    "Kaca",
-    "Besi",
-    "Aluminium",
-    "Seng",
-    "Tembaga",
-    "Botol bekas",
-    "Kardus bekas",
-    "Gelas pecah",
-    "Keramik",
-    "Lembaran baja",
-    "Baterai bekas",
-    "Aki bekas",
-    "Pipa PVC",
-    "Kawat",
-    "Tutup botol",
-    "Tutup kaleng",
-    "Tutup botol plastik",
-  ];
 
   async function handleSubmit(event) {
     event.preventDefault();

@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Admin",
+  title: "User",
   description: "Learn more about the team behind SiBiSa",
 };
 
